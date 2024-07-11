@@ -6,7 +6,6 @@ class Background extends Component {
   render() {
     return (
       <>
-        <div>...</div>
         <ParticlesBg color="#ff6b3d" type="cobweb" bg={true} />
       </>
     );
