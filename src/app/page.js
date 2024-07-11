@@ -1,8 +1,9 @@
 'use client';
 
-import Image from "next/image";
 import Navigation from '@/Components/Navigation';
-import Background from "@/Components/Background";
+import dynamic from 'next/dynamic';
+
+const Background = dynamic(() => import('@/Components/Background'), { ssr: false });
 
 export default function Home() {
   return (
