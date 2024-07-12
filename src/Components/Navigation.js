@@ -152,24 +152,26 @@ const Nub = ({ selected }) => {
   const [left, setLeft] = useState(0);
 
   useEffect(() => {
+    const moveNub = () => {
+      if (selected) {
+        const hoveredTab = document.getElementById(`shift-tab-${selected}`);
+        const overlayContent = document.getElementById("overlay-content");
+  
+        if (!hoveredTab || !overlayContent) return;
+  
+        const tabRect = hoveredTab.getBoundingClientRect();
+        const { left: contentLeft } = overlayContent.getBoundingClientRect();
+  
+        const tabCenter = tabRect.left + tabRect.width / 2 - contentLeft;
+  
+        setLeft(tabCenter);
+      }
+    };
+
     moveNub();
   }, [selected]);
 
-  const moveNub = () => {
-    if (selected) {
-      const hoveredTab = document.getElementById(`shift-tab-${selected}`);
-      const overlayContent = document.getElementById("overlay-content");
 
-      if (!hoveredTab || !overlayContent) return;
-
-      const tabRect = hoveredTab.getBoundingClientRect();
-      const { left: contentLeft } = overlayContent.getBoundingClientRect();
-
-      const tabCenter = tabRect.left + tabRect.width / 2 - contentLeft;
-
-      setLeft(tabCenter);
-    }
-  };
 
   return (
     <motion.span
@@ -272,13 +274,7 @@ const LearnMore = () => {
     <div>
       <div className="grid grid-cols-2 gap-2">
         <a href="#">
-          <Image
-            className="mb-2 h-14 w-full rounded object-cover"
-            src="/imgs/blog/4.png"
-            alt="Placeholder image"
-            width={56}
-            height={56}
-          />
+        
           <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
           <p className="text-xs text-neutral-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet illo
@@ -286,13 +282,7 @@ const LearnMore = () => {
           </p>
         </a>
         <a href="#">
-          <Image
-            className="mb-2 h-14 w-full rounded object-cover"
-            src="/imgs/blog/5.png"
-            alt="Placeholder image"
-            width={56}
-            height={56}
-          />
+         
           <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
           <p className="text-xs text-neutral-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet illo
