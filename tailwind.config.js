@@ -24,7 +24,9 @@ module.exports = {
       },
       
     },
- 
+    fontFamily: {
+      quicksand: ['Quicksand', 'sans-serif'],
+    },
     screens: {
       'sm': '640px',
       'md': '768px',

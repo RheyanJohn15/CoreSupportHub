@@ -15,12 +15,12 @@ import Image from "next/image";
 import Contact from "@/Components/Button";
 export default Navigation = () => {
   return (
-    <div className="flex w-screen justify-between px-8 text-white">
+    <div className="flex w-screen justify-between px-20 text-white">
         <div className="p-4">
        <Image
           src={Logo}
           alt={String.Img.Logo}
-          height={40}
+          height={60}
         />
        </div>
       <div className="flex justify-center items-center">
