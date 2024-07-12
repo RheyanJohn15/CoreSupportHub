@@ -13,25 +13,28 @@ import Logo from "../../public/logo/hor_logo2.png";
 import String from "@/Strings/english";
 import Image from "next/image";
 import Contact from "@/Components/Button";
-export default Navigation = () => {
+
+const Navigation = () => {
   return (
     <div className="flex w-screen justify-between px-20 text-white">
-        <div className="p-4">
-       <Image
+      <div className="p-4">
+        <Image
           src={Logo}
           alt={String.Img.Logo}
           height={60}
         />
-       </div>
+      </div>
       <div className="flex justify-center items-center">
-      <Tabs />
+        <Tabs />
       </div>
       <div className="p-4">
-  <Contact text={String.Nav.g} onclick={null} />
-  </div>
+        <Contact text={String.Nav.g} onclick={null} />
+      </div>
     </div>
   );
 };
+
+Navigation.displayName = "Navigation";
 
 const Tabs = () => {
   const [selected, setSelected] = useState(null);
@@ -72,6 +75,8 @@ const Tabs = () => {
   );
 };
 
+Tabs.displayName = "Tabs";
+
 const Tab = ({ children, tab, handleSetSelected, selected }) => {
   return (
     <button
@@ -79,20 +84,18 @@ const Tab = ({ children, tab, handleSetSelected, selected }) => {
       onMouseEnter={() => handleSetSelected(tab)}
       onClick={() => handleSetSelected(tab)}
       className={`flex text-base items-center gap-1 rounded-full px-3 py-1.5 text-sm transition-colors ${
-        selected === tab
-          ? " bg-neutral-800 text-main"
-          : "text-white"
+        selected === tab ? " bg-neutral-800 text-main" : "text-white"
       }`}
     >
       <span>{children}</span>
       <FiChevronDown
-        className={`transition-transform ${
-          selected === tab ? "rotate-180" : ""
-        }`}
+        className={`transition-transform ${selected === tab ? "rotate-180" : ""}`}
       />
     </button>
   );
 };
+
+Tab.displayName = "Tab";
 
 const Content = ({ selected, dir }) => {
   return (
@@ -137,9 +140,13 @@ const Content = ({ selected, dir }) => {
   );
 };
 
+Content.displayName = "Content";
+
 const Bridge = () => (
   <div className="absolute -top-[24px] left-0 right-0 h-[24px]" />
 );
+
+Bridge.displayName = "Bridge";
 
 const Nub = ({ selected }) => {
   const [left, setLeft] = useState(0);
@@ -175,6 +182,8 @@ const Nub = ({ selected }) => {
     />
   );
 };
+
+Nub.displayName = "Nub";
 
 const Services = () => {
   return (
@@ -226,6 +235,8 @@ const Services = () => {
   );
 };
 
+Services.displayName = "Services";
+
 const Industries = () => {
   return (
     <div className="grid grid-cols-3 gap-4 divide-x divide-neutral-700">
@@ -254,15 +265,19 @@ const Industries = () => {
   );
 };
 
+Industries.displayName = "Industries";
+
 const LearnMore = () => {
   return (
     <div>
       <div className="grid grid-cols-2 gap-2">
         <a href="#">
-          <img
+          <Image
             className="mb-2 h-14 w-full rounded object-cover"
             src="/imgs/blog/4.png"
             alt="Placeholder image"
+            width={56}
+            height={56}
           />
           <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
           <p className="text-xs text-neutral-400">
@@ -271,10 +286,12 @@ const LearnMore = () => {
           </p>
         </a>
         <a href="#">
-          <img
+          <Image
             className="mb-2 h-14 w-full rounded object-cover"
             src="/imgs/blog/5.png"
             alt="Placeholder image"
+            width={56}
+            height={56}
           />
           <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
           <p className="text-xs text-neutral-400">
@@ -291,6 +308,8 @@ const LearnMore = () => {
   );
 };
 
+LearnMore.displayName = "LearnMore";
+
 const TABS = [
   {
     title: String.Nav.s,
@@ -305,3 +324,5 @@ const TABS = [
     Component: LearnMore,
   },
 ].map((n, idx) => ({ ...n, id: idx + 1 }));
+
+export default Navigation;
