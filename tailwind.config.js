@@ -22,6 +22,7 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      
     },
  
     screens: {
@@ -39,7 +40,9 @@ module.exports = {
       '3xl': '1.953rem',
       '4xl': '2.441rem',
       '5xl': '3.052rem',
-    } 
+    }, 
+    
   },
+  
   plugins: [],
 };

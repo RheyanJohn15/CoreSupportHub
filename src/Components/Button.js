@@ -2,7 +2,10 @@
 
 const BTN = ({text, onclick}) => {
     return (
-     <button onClick={onclick} className="bg-main hover:bg-main-light text-white font-bold py-2 px-4 border-b-4 border-main-dark hover:border-main-light rounded">{text}</button>
+        <button onClick={onclick} className="shadow-[inset_0_0_0_2px_#616467] text-black px-12 py-4 rounded-full tracking-widest uppercase font-bold bg-transparent hover:bg-[#616467] hover:text-white dark:text-neutral-200 transition duration-200">
+        {text}
+      </button>
+      
     );
 }
 
