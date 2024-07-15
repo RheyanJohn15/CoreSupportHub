@@ -93,7 +93,7 @@ const Tab = ({ tab, selected, handleSetSelected }) => {
     <div
       id={`shift-tab-${tab.id}`}
       onMouseEnter={() => handleSetSelected(tab.id)}
-      className={`flex cursor-pointer text-xl items-center gap-1 rounded-full px-3 py-1.5 text-sm transition-colors ${selected ? 'bg-neutral-800 text-main' : 'text-white'}`}
+      className={`flex cursor-pointers text-xl items-center gap-1 rounded-full px-3 py-1.5 text-sm transition-colors ${selected ? 'bg-neutral-800 text-main' : 'text-white'}`}
     >
       <span>{tab.title}</span>
       <FiChevronDown className={`transition-transform ${selected ? 'rotate-180' : ''}`} />
@@ -134,7 +134,7 @@ const Content = ({ selectedTab }) => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 8 }}
-          className="absolute w-full backdrop-blur-lg bg-white/5 left-0 top-[calc(100%_+_24px)] w-96 rounded-lg border border-neutral-600 bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-800 p-4"
+          className="fixed w-screen backdrop-blur-lg z-20 bg-white/5 left-0 top-[11%] rounded-lg border p-4"
         >
           <Bridge />
           <Nub selected={selectedTab} />
@@ -184,76 +184,76 @@ const Services = () => {
     <div>
       <div className="flex justify-between ">
         <div>
-          <h3 className="mb-2 text-sm font-medium">{String.Services.Tech}</h3>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <h3 className="mb-2 text-2xl font-medium">{String.Services.Tech}</h3>
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.TechUl.t1}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.TechUl.t2}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.TechUl.t3}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.TechUl.t4}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.TechUl.t5}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.TechUl.t6}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.TechUl.t7}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.TechUl.t8}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.TechUl.t9}
           </Link>
         </div>
         <div>
-          <h3 className="mb-2 text-sm font-medium">{String.Services.BPO}</h3>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <h3 className="mb-2 text-2xl font-medium">{String.Services.BPO}</h3>
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.BPOUl.b1}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.BPOUl.b2}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.BPOUl.b3}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.BPOUl.b4}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.BPOUl.b5}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.BPOUl.b6}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.BPOUl.b7}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.BPOUl.b8}
           </Link>
         </div>
         <div>
-          <h3 className="mb-2 text-sm font-medium">{String.Services.Cons}</h3>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <h3 className="mb-2 text-2xl font-medium">{String.Services.Cons}</h3>
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.ConsUl.c1}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.ConsUl.c2}
           </Link>
-          <Link href="#" className="mb-1 block text-sm text-white hover:text-main">
+          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.ConsUl.c3}
           </Link>
         </div>
       </div>
-      <button className="ml-auto mt-4 flex items-center gap-1 text-sm hover:text-main">
+      <button className="ml-auto mt-4 flex items-center gap-1 text-base hover:text-main">
         <span>View all services</span>
         <FiArrowRight />
       </button>
