@@ -8,6 +8,7 @@ import String from "@/Strings/english";
 import Image from "next/image";
 import Contact from "@/Components/Button";
 import Link from "next/link";
+
 //#region Render Navigation
 const Navigation = () => {
   const [drawerState, setDrawerState] = useState({ active: false, count: 0 });
@@ -134,7 +135,7 @@ const Content = ({ selectedTab }) => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 8 }}
-          className="fixed w-screen backdrop-blur-lg z-20 bg-white/5 left-0 top-[11%] rounded-lg border p-4"
+          className="fixed w-[90vw] backdrop-blur-lg z-20 bg-white/5 left-12 top-[13vh] rounded-lg border p-4"
         >
           <Bridge />
           <Nub selected={selectedTab} />
@@ -182,38 +183,66 @@ Nub.displayName = "Nub";
 const Services = () => {
   return (
     <div>
-      <div className="flex justify-between ">
-        <div>
+      <Link href={'/'} className="text-main text-xl mb-4 flex items-center gap-1 hover:underline"><span>Our Services</span> <FiArrowRight /></Link>
+      <div className="grid grid-cols-3 gap-4 divide-x ">
+        <div className="flex-col"> 
           <h3 className="mb-2 text-2xl font-medium">{String.Services.Tech}</h3>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.TechUl.t1}
+          <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+         </svg>
+         {String.Services.TechUl.t1}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.TechUl.t2}
+          <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+          </svg>
+          {String.Services.TechUl.t2}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.TechUl.t3}
+          <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+          </svg>
+          {String.Services.TechUl.t3}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.TechUl.t4}
+          <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" />
+          </svg>
+          {String.Services.TechUl.t4}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.TechUl.t5}
+          <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+          </svg>
+          {String.Services.TechUl.t5}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.TechUl.t6}
+          <Link href="#" className="mb-1 flex gap-4 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+          </svg>
+          {String.Services.TechUl.t6}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.TechUl.t7}
+          <Link href="#" className="mb-1 flex gap-4 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>
+          {String.Services.TechUl.t7}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.TechUl.t8}
+          <Link href="#" className="mb-1 flex gap-4 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+          </svg>
+          {String.Services.TechUl.t8}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.TechUl.t9}
+          <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m10.5 0a48.536 48.536 0 0 0-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5Zm-3 0h.008v.008H15V10.5Z" />
+          </svg>
+           {String.Services.TechUl.t9}
           </Link>
         </div>
-        <div>
+        <div  className="flex-col pl-4">
           <h3 className="mb-2 text-2xl font-medium">{String.Services.BPO}</h3>
           <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.BPOUl.b1}
@@ -240,7 +269,7 @@ const Services = () => {
             {String.Services.BPOUl.b8}
           </Link>
         </div>
-        <div>
+        <div  className="flex-col pl-4">
           <h3 className="mb-2 text-2xl font-medium">{String.Services.Cons}</h3>
           <Link href="#" className="mb-1 block text-base text-white hover:text-main">
             {String.Services.ConsUl.c1}
@@ -253,10 +282,7 @@ const Services = () => {
           </Link>
         </div>
       </div>
-      <button className="ml-auto mt-4 flex items-center gap-1 text-base hover:text-main">
-        <span>View all services</span>
-        <FiArrowRight />
-      </button>
+    
     </div>
   );
 };
