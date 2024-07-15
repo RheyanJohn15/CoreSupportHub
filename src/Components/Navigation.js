@@ -156,6 +156,7 @@ const Nub = ({ selected }) => {
     if (selected) {
       const hoveredTab = document.getElementById(`shift-tab-${selected.id}`);
       const overlayContent = document.getElementById(`overlay-content-${selected.id}`);
+
       if (!hoveredTab || !overlayContent) return;
       const tabRect = hoveredTab.getBoundingClientRect();
       const contentRect = overlayContent.getBoundingClientRect();
