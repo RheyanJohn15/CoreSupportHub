@@ -3,7 +3,10 @@
 import String from '@/Strings/english';
 const LandingBlock = () => {
     return (
-        <main className='w-screen h-screen mt-24'>
+        <main className='w-full flex flex-col justify-center items-center h-screen'>
+          
+          <h1>{String.Tag1}</h1>
+
 
         </main>
     );

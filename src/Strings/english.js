@@ -1,8 +1,12 @@
-import { Description } from "@headlessui/react";
-
 const Main = {
   App: 'Core Support Hub',
   Description: 'Core Support Hub is a startup outsourcer founded by industry veterans in business process outsourcing, financial services, manufacturing, technology services and the academe. We believe that outsourcing should return to its core objective which is to be a true extension of the client’s business, with a shared purpose and vision.',
+  Tag1: 'For Small and Midsize Businesses',
+  SubTag1: 'Core Support Hub: Your outsourcing partner of choice for Small and Midsize Businesses',
+  Tag2:' Technology and Outsourcing for Small and Midsize Businesses',
+  SubTag2: 'Empowering Small & Midsize Businesses with Innovative Technology and Expert Outsourcing Solutions',
+  Tag3: 'An outsourcing partnership where we become an extension of your team.',
+  SubTag3: 'A Partnership where we became an extension of your team',
   Nav:{
    h: "HOME",
    s: "SERVICES",
