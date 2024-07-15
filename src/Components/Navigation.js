@@ -32,7 +32,7 @@ const Navigation = () => {
 
   return (
     <>
-      <div className={`hidden md:flex fixed top-0 left-0 right-0 w-screen justify-between px-20 text-white z-20 ${scrollBg ? 'bg-main/20 backdrop-blur-lg' : ''}`}>
+      <div className={`hidden md:flex fixed top-0 left-0 right-0 transition-all duration-200 ease-in-out w-screen justify-between px-20 text-white z-20 ${scrollBg ? 'bg-main/20 backdrop-blur-lg' : ''}`}>
         <Link href="/" className="p-4">
           <Image src={Logo} alt={String.Img.Logo} height={60} />
         </Link>
@@ -91,6 +91,7 @@ const Tabs = () => {
 const Tab = ({ tab, selected, handleSetSelected }) => {
   return (
     <div
+      id={`shift-tab-${tab.id}`}
       onMouseEnter={() => handleSetSelected(tab.id)}
       className={`flex cursor-pointer text-xl items-center gap-1 rounded-full px-3 py-1.5 text-sm transition-colors ${selected ? 'bg-neutral-800 text-main' : 'text-white'}`}
     >
@@ -101,7 +102,8 @@ const Tab = ({ tab, selected, handleSetSelected }) => {
   );
 };
 
-const Content = ({selectedTab }) => {
+
+const Content = ({ selectedTab }) => {
   const [isVisible, setIsVisible] = useState(false);
   const contentRef = useRef(null);
 
@@ -112,22 +114,10 @@ const Content = ({selectedTab }) => {
       }
     };
 
-    const handleMouseEnter = () => {
-      setIsVisible(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsVisible(false);
-    };
-
     document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("mouseenter", handleMouseEnter);
-    document.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("mouseenter", handleMouseEnter);
-      document.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
@@ -139,14 +129,15 @@ const Content = ({selectedTab }) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
+         id={`overlay-content-${selectedTab.id}`}
           ref={contentRef}
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 8 }}
           className="absolute w-full backdrop-blur-lg bg-white/5 left-0 top-[calc(100%_+_24px)] w-96 rounded-lg border border-neutral-600 bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-800 p-4"
         >
-      <Bridge />
-      <Nub selected={selectedTab} />
+          <Bridge />
+          <Nub selected={selectedTab} />
           <div className="overflow-hidden">
             {selectedTab && <selectedTab.Component />}
           </div>
@@ -155,33 +146,22 @@ const Content = ({selectedTab }) => {
     </AnimatePresence>
   );
 };
-Content.displayName = "Content";
 
 const Bridge = () => <div className="absolute-top-[24px] left-0 right-0 h-[24px]" />;
-
-Bridge.displayName = "Bridge";
 
 const Nub = ({ selected }) => {
   const [left, setLeft] = useState(0);
 
   useEffect(() => {
-    const moveNub = () => {
-      if (selected) {
-
-        const hoveredTab = document.getElementById(`shift-tab-${selected}`);
-        const overlayContent = document.getElementById("overlay-content");
-
-        if (!hoveredTab || !overlayContent) return;
-
-        const tabRect = hoveredTab.getBoundingClientRect();
-        const contentRect = overlayContent.getBoundingClientRect();
-        const tabCenter = tabRect.left + tabRect.width / 2 - contentRect.left;
-        console.log(tabRect.width);
-        setLeft(tabCenter);
-      }
-    };
-
-    moveNub();
+    if (selected) {
+      const hoveredTab = document.getElementById(`shift-tab-${selected.id}`);
+      const overlayContent = document.getElementById(`overlay-content-${selected.id}`);
+      if (!hoveredTab || !overlayContent) return;
+      const tabRect = hoveredTab.getBoundingClientRect();
+      const contentRect = overlayContent.getBoundingClientRect();
+      const tabCenter = tabRect.left + tabRect.width / 2 - contentRect.left;
+      setLeft(tabCenter);
+    }
   }, [selected]);
 
   return (
@@ -447,7 +427,7 @@ const NavDrawer = ({ active }) => {
   };
   return (
     <motion.div
-      className="fixed top-0 right-0 bottom-0 w-screen md:hidden h-screen backdrop-blur bg-main/25"
+      className="fixed top-20 right-0 bottom-0 w-screen md:hidden h-screen backdrop-blur bg-main/25"
       initial={false}
       animate={active ? "open" : "closed"}
       variants={variants}
