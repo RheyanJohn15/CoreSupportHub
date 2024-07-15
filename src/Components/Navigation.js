@@ -8,7 +8,7 @@ import {
   FiHome,
   FiPieChart,
 } from "react-icons/fi";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence,MotionConfig, motion } from "framer-motion";
 import Logo from "../../public/logo/hor_logo2.png";
 import String from "@/Strings/english";
 import Image from "next/image";
@@ -16,12 +16,13 @@ import Contact from "@/Components/Button";
 
 const Navigation = () => {
   return (
-    <div className="flex w-screen justify-between px-20 text-white">
+    <>
+    <div className="hidden md:flex w-screen mt-4 justify-between px-20 text-white">
       <div className="p-4">
         <Image
           src={Logo}
           alt={String.Img.Logo}
-          height={60}
+          height={70}
         />
       </div>
       <div className="flex justify-center items-center">
@@ -31,6 +32,11 @@ const Navigation = () => {
         <Contact text={String.Nav.g} onclick={null} />
       </div>
     </div>
+
+    <div className="flex md:hidden w-screen justify-end backdrop-blur bg-white/10">
+      <AnimatedHamburgerButton />
+    </div>
+    </>
   );
 };
 
@@ -190,7 +196,7 @@ Nub.displayName = "Nub";
 const Services = () => {
   return (
     <div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 ">
         <div>
           <h3 className="mb-2 text-sm font-medium">Startup</h3>
           <a href="#" className="mb-1 block text-sm text-white">
@@ -314,5 +320,80 @@ const TABS = [
     Component: LearnMore,
   },
 ].map((n, idx) => ({ ...n, id: idx + 1 }));
+
+
+
+const AnimatedHamburgerButton = () => {
+  const [active, setActive] = useState(false);
+  return (
+    <MotionConfig
+      transition={{
+        duration: 0.5,
+        ease: "easeInOut",
+      }}
+    >
+      <motion.button
+        initial={false}
+        animate={active ? "open" : "closed"}
+        onClick={() => setActive((pv) => !pv)}
+        className="relative h-20 w-20 rounded-full bg-white/0 transition-colors hover:bg-white/20"
+      >
+        <motion.span
+          variants={VARIANTS.top}
+          className="absolute h-1 w-10 bg-white"
+          style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
+        />
+        <motion.span
+          variants={VARIANTS.middle}
+          className="absolute h-1 w-10 bg-white"
+          style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
+        />
+        <motion.span
+          variants={VARIANTS.bottom}
+          className="absolute h-1 w-5 bg-white"
+          style={{
+            x: "-50%",
+            y: "50%",
+            bottom: "35%",
+            left: "calc(50% + 10px)",
+          }}
+        />
+      </motion.button>
+    </MotionConfig>
+  );
+};
+
+const VARIANTS = {
+  top: {
+    open: {
+      rotate: ["0deg", "0deg", "45deg"],
+      top: ["35%", "50%", "50%"],
+    },
+    closed: {
+      rotate: ["45deg", "0deg", "0deg"],
+      top: ["50%", "50%", "35%"],
+    },
+  },
+  middle: {
+    open: {
+      rotate: ["0deg", "0deg", "-45deg"],
+    },
+    closed: {
+      rotate: ["-45deg", "0deg", "0deg"],
+    },
+  },
+  bottom: {
+    open: {
+      rotate: ["0deg", "0deg", "45deg"],
+      bottom: ["35%", "50%", "50%"],
+      left: "50%",
+    },
+    closed: {
+      rotate: ["45deg", "0deg", "0deg"],
+      bottom: ["50%", "50%", "35%"],
+      left: "calc(50% + 10px)",
+    },
+  },
+};
 
 export default Navigation;
