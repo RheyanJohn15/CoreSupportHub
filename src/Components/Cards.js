@@ -101,19 +101,19 @@ export default Example;
 const cards = [
   {
     icon: <FaMicrochip />,
-    title: "Title 1",
+    title: "IT Manage Services",
     id: 1,
     body: 'This is some text within a card body. It provides brief information about the content of the card.',
   },
   {
     icon: <FaHeadset  />,
-    title: "Title 2",
+    title: "Bpo",
     id: 2,
     body: 'This is some text within a card body. It provides brief information about the content of the card.',
   },
   {
     icon: <FaRegLightbulb />,
-    title: "Title 3",
+    title: "Consulting",
     id: 3,
     body: 'This is some text within a card body. It provides brief information about the content of the card.',
   },
