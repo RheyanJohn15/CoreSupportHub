@@ -1,5 +1,7 @@
+'use client';
+
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import {
   Card,
   CardBody,
@@ -8,7 +10,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import React from 'react';
-import { FaMicrochip, FaHeadset, FaRegLightbulb, FaCircleArrowDown } from "react-icons/fa6";
+import { FaMicrochip, FaHeadset, FaRegLightbulb } from "react-icons/fa";
 
 const Example = () => {
   return (
@@ -26,8 +28,15 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["15%", "-40%"]);
-  const xSmallScreen = useTransform(scrollYProgress, [0, 1], ["5%", "-92%"]);
+  // Determine screen size to conditionally set x value
+  const isSmallScreen = window.innerWidth < 768; // Adjust as per your design breakpoints
+
+  // Adjust x value based on screen size and scrollYProgress
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isSmallScreen ? ["3%", "-90%"] : ["7%", "-18%"]
+  );
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
@@ -35,19 +44,10 @@ const HorizontalScrollCarousel = () => {
         <h1 className="pl-5 text-4xl text-quicksand text-main md:text-5xl lg:text-6xl whitespace-nowrap">
           Our Services
         </h1>
-        <motion.div
-          style={{ x: window.innerWidth < 768 ? xSmallScreen : x }}
-          className="flex gap-20"
-        >
+        <motion.div style={{ x }} className="flex gap-20">
           {cards.map((card) => {
             return <CardComponent card={card} key={card.id} />;
           })}
-          <div className="flex items-center justify-center mt-16 rounded-xl h-40 w-80 md:w-96 bg-white">
-            <h1 className="text-4xl text-quicksand text-main md:text-5xl lg:text-6xl whitespace-nowrap">
-              Explore More
-            </h1>
-            <FaCircleArrowDown size={40} className="ml-1 text-main mt-4" />
-          </div>
         </motion.div>
       </div>
     </section>
@@ -55,7 +55,7 @@ const HorizontalScrollCarousel = () => {
 };
 
 const CardComponent = ({ card }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -102,8 +102,7 @@ const CardComponent = ({ card }) => {
   );
 };
 
-export default Example;
-
+// Your card data
 const cards = [
   {
     icon: <FaMicrochip />,
@@ -124,3 +123,5 @@ const cards = [
     body: "Core Support Hub extends your business by understanding operations and delivering authentic brand ambassador services to your customers.",
   },
 ];
+
+export default Example;
