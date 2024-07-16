@@ -8,7 +8,13 @@ import String from "@/Strings/english";
 import Image from "next/image";
 import Contact from "@/Components/Button";
 import Link from "next/link";
+import {
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "@material-tailwind/react";
 
+import { BiChip } from "react-icons/bi";
 //#region Render Navigation
 const Navigation = () => {
   const [drawerState, setDrawerState] = useState({ active: false, count: 0 });
@@ -45,7 +51,7 @@ const Navigation = () => {
         </div>
       </div>
 
-      <div className="flex md:hidden fixed top-0 left-0 right-0 w-screen z-20 justify-between backdrop-blur bg-main/25">
+      <div className="flex md:hidden fixed top-0 left-0 right-0 w-full z-20 justify-between backdrop-blur bg-main/25">
         <Link href="/" className="p-1">
           <Image src={Logo} alt={String.Img.Logo} height={70} />
         </Link>
@@ -280,23 +286,38 @@ const Services = () => {
           </svg>
           {String.Services.BPOUl.b6}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.BPOUl.b7}
+          <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+          </svg>
+          {String.Services.BPOUl.b7}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.BPOUl.b8}
+          <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z" />
+          </svg>
+          {String.Services.BPOUl.b8}
           </Link>
         </div>
         <div  className="flex-col pl-4">
           <h3 className="mb-2 text-2xl font-medium">{String.Services.Cons}</h3>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.ConsUl.c1}
+          <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+          </svg>
+          {String.Services.ConsUl.c1}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.ConsUl.c2}
+          <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
+          </svg>
+          {String.Services.ConsUl.c2}
           </Link>
-          <Link href="#" className="mb-1 block text-base text-white hover:text-main">
-            {String.Services.ConsUl.c3}
+          <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+          {String.Services.ConsUl.c3}
           </Link>
         </div>
       </div>
@@ -472,18 +493,114 @@ const NavDrawer = ({ active }) => {
   };
   return (
     <motion.div
-      className="fixed top-20 right-0 bottom-0 w-screen md:hidden h-screen backdrop-blur bg-main/25"
+      className="fixed top-20 right-0 bottom-0 w-full md:hidden h-screen backdrop-blur bg-main/25"
       initial={false}
       animate={active ? "open" : "closed"}
       variants={variants}
       transition={{ type: "spring", stiffness: 100 }}
     >
-      {/* Add drawer content here */}
+      <AccordionCustomIcon />
     </motion.div>
   );
 };
 
 NavDrawer.displayName = "NavDrawer";
+function Icon({ id, open }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      className={`${id === open ? "rotate-90" : ""} h-5 w-5 transition-transform`}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+    </svg>
+  );
+}
+
+const AccordionCustomIcon = () => {
+  const [openParent, setOpenParent] = React.useState(0);
+  const [openNested, setOpenNested] = React.useState(0);
+
+  const handleOpenParent = (value) => setOpenParent(openParent === value ? 0 : value);
+  const handleOpenNested = (value) => setOpenNested(openNested === value ? 0 : value);
+
+  return (
+    <div className="text-white p-8">
+      <Accordion open={openParent === 1} icon={<Icon id={1} open={openParent} />}>
+        <AccordionHeader onClick={() => handleOpenParent(1)}>{String.Nav.s}</AccordionHeader>
+        <AccordionBody className="p-0">
+          <Accordion className="w-[83%] ml-4" open={openNested === 1} icon={<Icon id={1} open={openNested} />}>
+            <AccordionHeader onClick={() => handleOpenNested(1)}><BiChip />{String.Services.Tech}</AccordionHeader>
+            <AccordionBody className="flex flex-col gap-2 p-0">
+              <Link href="" className="text-base hover:text-dark hover:text-xl"> {String.Services.TechUl.t1}</Link>
+              <Link href="" className="text-base hover:text-dark hover:text-xl"> {String.Services.TechUl.t2}</Link>
+              <Link href="" className="text-base hover:text-dark hover:text-xl"> {String.Services.TechUl.t3}</Link>
+              <Link href="" className="text-base hover:text-dark hover:text-xl"> {String.Services.TechUl.t4}</Link>
+              <Link href="" className="text-base hover:text-dark hover:text-xl"> {String.Services.TechUl.t5}</Link>
+              <Link href="" className="text-base hover:text-dark hover:text-xl"> {String.Services.TechUl.t6}</Link>
+              <Link href="" className="text-base hover:text-dark hover:text-xl"> {String.Services.TechUl.t7}</Link>
+              <Link href="" className="text-base hover:text-dark hover:text-xl"> {String.Services.TechUl.t8}</Link>
+              <Link href="" className="text-base hover:text-dark hover:text-xl"> {String.Services.TechUl.t9}</Link>
+            </AccordionBody>
+          </Accordion>
+          <Accordion className="w-[83%] ml-4" open={openNested === 2} icon={<Icon id={2} open={openNested} />}>
+            <AccordionHeader onClick={() => handleOpenNested(2)}>{String.Services.BPO}</AccordionHeader>
+            <AccordionBody>
+              <Link href="" className="text-base"> {String.Services.BPOUl.b1}</Link>
+              <Link href="" className="text-base"> {String.Services.BPOUl.b2}</Link>
+              <Link href="" className="text-base"> {String.Services.BPOUl.b3}</Link>
+              <Link href="" className="text-base"> {String.Services.BPOUl.b4}</Link>
+              <Link href="" className="text-base"> {String.Services.BPOUl.b5}</Link>
+              <Link href="" className="text-base"> {String.Services.BPOUl.b6}</Link>
+              <Link href="" className="text-base"> {String.Services.BPOUl.b7}</Link>
+              <Link href="" className="text-base"> {String.Services.BPOUl.b8}</Link>
+            </AccordionBody>
+          </Accordion>
+          <Accordion className="w-[83%] ml-4" open={openNested === 3} icon={<Icon id={3} open={openNested} />}>
+            <AccordionHeader onClick={() => handleOpenNested(3)}>{String.Services.Cons}</AccordionHeader>
+            <AccordionBody>
+              <Link href="" className="text-base"> {String.Services.ConsUl.c1}</Link>
+              <Link href="" className="text-base"> {String.Services.ConsUl.c2}</Link>
+              <Link href="" className="text-base"> {String.Services.ConsUl.c3}</Link>
+            </AccordionBody>
+          </Accordion>
+        </AccordionBody>
+      </Accordion>
+
+      <Accordion open={openParent === 2} icon={<Icon id={2} open={openParent} />}>
+        <AccordionHeader onClick={() => handleOpenParent(2)}>
+          How to use Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody>
+          <Accordion open={openNested === 4} icon={<Icon id={4} open={openNested} />}>
+            <AccordionHeader onClick={() => handleOpenNested(4)}>Nested Accordion</AccordionHeader>
+            <AccordionBody>
+              This is a nested accordion inside the second accordion.
+            </AccordionBody>
+          </Accordion>
+        </AccordionBody>
+      </Accordion>
+
+      <Accordion open={openParent === 3} icon={<Icon id={3} open={openParent} />}>
+        <AccordionHeader onClick={() => handleOpenParent(3)}>
+          What can I do with Material Tailwind?
+        </AccordionHeader>
+        <AccordionBody>
+          <Accordion open={openNested === 5} icon={<Icon id={5} open={openNested} />}>
+            <AccordionHeader onClick={() => handleOpenNested(5)}>Nested Accordion</AccordionHeader>
+            <AccordionBody>
+              This is a nested accordion inside the third accordion.
+            </AccordionBody>
+          </Accordion>
+        </AccordionBody>
+      </Accordion>
+    </div>
+  );
+}
+
 //#endregion
 
 export default Navigation;
