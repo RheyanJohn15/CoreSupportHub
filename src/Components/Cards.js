@@ -1,3 +1,5 @@
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useRef } from "react";
 import {
   Card,
   CardBody,
@@ -6,14 +8,58 @@ import {
   Button,
 } from "@material-tailwind/react";
 import Image from "next/image";
+import Img from '../../public/techIcon.png'
 
-export function CardPage({ header, image, body, button,click }) {
+const Example = () => {
   return (
-    <Card className="mt-6 m-5 w-96 rounded p-7 shadow-xl bg-gradient-to-br from-orange to-darkOrange transition duration-300 hover:shadow-main hover:bg-main-dark">
+    <div className="bg-neutral-800">
+      <div className="flex h-1 items-center justify-center">
+        {/* <span className="font-semibold uppercase text-neutral-500">
+          Scroll down
+        </span> */}
+      </div>
+      <HorizontalScrollCarousel />
+      <div className="flex h-1 items-center justify-center">
+        {/* <span className="font-semibold uppercase text-neutral-500">
+          Scroll up
+        </span> */}
+      </div>
+    </div>
+  );
+};
+
+const HorizontalScrollCarousel = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-90%"]);
+
+  return (
+     <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <h1 className="pl-5 text-4xl text-quicksand text-main md:text-5xl lg:text-6xl whitespace-nowrap">
+          Our Services
+        </h1>
+        <motion.div style={{ x }} className="flex gap-20">
+          {cards.map((card) => {
+            return <Cardss card={card} key={card.id} />;
+          })}
+          <h1 className="text-yellow">hellllooo</h1>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const Cardss = ({ card }) => {
+  return (
+     <Card  key={card.id} className="h-auto w-96 rounded shadow-xl bg-gradient-to-br from-orange to-darkOrange transition duration-300 hover:shadow-main hover:bg-main-dark">
       <CardBody className="flex">
         <div className="mr-4">
           <Image 
-            src={image}
+            src={card.url}
             width={100}
             height={100}
           />
@@ -21,17 +67,17 @@ export function CardPage({ header, image, body, button,click }) {
         <div className="flex-1">
           <div className="flex items-center mb-4">
             <Typography variant="h5" color="blue-gray" className="font-bold">
-              {header}
+             {card.title}
             </Typography>
           </div>
           <Typography className="mb-4 text-gray-700">
-            {body}
+            {card.body}
           </Typography>
         </div>
       </CardBody>
       <CardFooter className="pt-0 flex justify-end">
-        <Button onClick={click} variant="text" className="text-blue-500 flex items-center">
-          {button}
+        <Button variant="text" className="text-blue-500 flex items-center">
+         Learn More
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-4 h-4 ml-1">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
@@ -39,6 +85,27 @@ export function CardPage({ header, image, body, button,click }) {
       </CardFooter>
     </Card>
   );
-}
+};
 
-export default CardPage;
+export default Example;
+
+const cards = [
+  {
+    url: Img,
+    title: "Title 1",
+    id: 1,
+    body:'This is some text within a card body. It provides brief information about the content of the card.',
+  },
+  {
+    url: Img,
+    title: "Title 2",
+    id: 2,
+    body:'This is some text within a card body. It provides brief information about the content of the card.',
+  },
+  {
+    url: Img,
+    title: "Title 3",
+    id: 3,
+    body:'This is some text within a card body. It provides brief information about the content of the card.',
+  },
+];
