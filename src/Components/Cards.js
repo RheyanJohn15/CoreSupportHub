@@ -55,7 +55,7 @@ const HorizontalScrollCarousel = () => {
 
 const Cardss = ({ card }) => {
   return (
-     <Card  key={card.id} className="h-auto w-96 rounded shadow-xl bg-gradient-to-br from-orange to-darkOrange transition duration-300 hover:shadow-main hover:bg-main-dark">
+     <Card  key={card.id} className="h-auto w-96 rounded shadow-xl bg-gradient-to-br p-7 from-orange to-darkOrange transition duration-300 hover:shadow-main hover:bg-main-dark">
       <CardBody className="flex">
         <div className="mr-4">
           <Image 
