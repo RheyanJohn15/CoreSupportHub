@@ -8,16 +8,14 @@ import {
   Button,
 } from "@material-tailwind/react";
 import React from 'react';
-import { FaMicrochip,FaHeadset, FaRegLightbulb   } from "react-icons/fa6";
+import { FaMicrochip, FaHeadset, FaRegLightbulb, FaCircleArrowDown } from "react-icons/fa6";
 
 const Example = () => {
   return (
     <div className="bg-neutral-800">
-      <div className="flex h-1 items-center justify-center">
-      </div>
+      <div className="flex h-1 items-center justify-center"></div>
       <HorizontalScrollCarousel />
-      <div className="flex h-1 items-center justify-center">
-      </div>
+      <div className="flex h-1 items-center justify-center"></div>
     </div>
   );
 };
@@ -28,7 +26,8 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-92%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["15%", "-40%"]);
+  const xSmallScreen = useTransform(scrollYProgress, [0, 1], ["5%", "-92%"]);
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
@@ -36,17 +35,26 @@ const HorizontalScrollCarousel = () => {
         <h1 className="pl-5 text-4xl text-quicksand text-main md:text-5xl lg:text-6xl whitespace-nowrap">
           Our Services
         </h1>
-        <motion.div style={{ x }} className="flex gap-20">
+        <motion.div
+          style={{ x: window.innerWidth < 768 ? xSmallScreen : x }}
+          className="flex gap-20"
+        >
           {cards.map((card) => {
-            return <Cardss card={card} key={card.id} />;
+            return <CardComponent card={card} key={card.id} />;
           })}
+          <div className="flex items-center justify-center mt-16 rounded-xl h-40 w-80 md:w-96 bg-white">
+            <h1 className="text-4xl text-quicksand text-main md:text-5xl lg:text-6xl whitespace-nowrap">
+              Explore More
+            </h1>
+            <FaCircleArrowDown size={40} className="ml-1 text-main mt-4" />
+          </div>
         </motion.div>
       </div>
     </section>
   );
 };
 
-const Cardss = ({ card }) => {
+const CardComponent = ({ card }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -58,7 +66,7 @@ const Cardss = ({ card }) => {
   };
 
   return (
-       <Card
+    <Card
       key={card.id}
       className={`h-auto w-80 md:w-96 rounded shadow-xl bg-gradient-to-br p-7 from-yellow to-darkOrange transition duration-100 hover:shadow-main hover:from-main hover:to-yellow hover:text-white`}
       onMouseEnter={handleMouseEnter}
@@ -66,7 +74,6 @@ const Cardss = ({ card }) => {
     >
       <CardBody>
         <div className="mb-4">
-          {/* Render dynamic icon with hover effect */}
           {React.cloneElement(card.icon, {
             size: 35,
             className: `${isHovered ? 'text-yellow' : 'text-black'} cursor-pointer`,
@@ -92,7 +99,6 @@ const Cardss = ({ card }) => {
         </Button>
       </CardFooter>
     </Card>
-
   );
 };
 
@@ -106,15 +112,15 @@ const cards = [
     body: "Core Support Hub offers managed IT services including remote desktop support, system administration, and network monitoring to optimize your connectivity.",
   },
   {
-    icon: <FaHeadset  />,
+    icon: <FaHeadset />,
     title: "Bpo",
     id: 2,
-    body: 'We design, build, and customize software and applications to enhance performance across operations, finance, HR, inventory, and business websites.',
+    body: "We design, build, and customize software and applications to enhance performance across operations, finance, HR, inventory, and business websites.",
   },
   {
     icon: <FaRegLightbulb />,
     title: "Consulting",
     id: 3,
-    body: 'Core Support Hub extends your business by understanding operations and delivering authentic brand ambassador services to your customers.',
+    body: "Core Support Hub extends your business by understanding operations and delivering authentic brand ambassador services to your customers.",
   },
 ];
