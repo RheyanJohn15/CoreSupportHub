@@ -8,11 +8,11 @@ const Tools = () => {
   return (
     <section className="w-full mt-24 px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-20 max-w-6xl mx-auto">
       <div>
-        <h3 className="text-4xl md:text-6xl font-semibold">
-          {String.Tag1}
+        <h3 className="text-6xl  font-semibold">
+          {String.Tools}
         </h3>
-        <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
-         {String.SubTag1}
+        <p className="text-4xl my-4 md:my-6">
+         {String.SubTools}
         </p>
     
       </div>
