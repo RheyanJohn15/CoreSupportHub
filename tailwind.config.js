@@ -15,8 +15,8 @@ module.exports = {
       'grey': '#1f2430',
       'yellow': '#ffbf00',
       'trans': 'transparent',
-      'orange':'#EE5A24',
-      'darkOrange':'#EA2027',
+      'orange':'#FFBE0B',
+      'darkOrange':'#F42B03',
     },
     extend: {
       backgroundImage: {
