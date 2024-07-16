@@ -14,7 +14,7 @@ import {
   AccordionBody,
 } from "@material-tailwind/react";
 
-import { BiChip } from "react-icons/bi";
+import { BiChip, BiBulb, BiHeadphone   } from "react-icons/bi";
 //#region Render Navigation
 const Navigation = () => {
   const [drawerState, setDrawerState] = useState({ active: false, count: 0 });
@@ -493,7 +493,7 @@ const NavDrawer = ({ active }) => {
   };
   return (
     <motion.div
-      className="fixed top-20 right-0 bottom-0 w-full md:hidden h-screen backdrop-blur bg-main/25"
+      className="fixed top-20 right-0 bottom-0 w-full z-20 md:hidden h-screen backdrop-blur bg-main/25"
       initial={false}
       animate={active ? "open" : "closed"}
       variants={variants}
@@ -547,8 +547,8 @@ const AccordionCustomIcon = () => {
             </AccordionBody>
           </Accordion>
           <Accordion className="w-[83%] ml-4" open={openNested === 2} icon={<Icon id={2} open={openNested} />}>
-            <AccordionHeader onClick={() => handleOpenNested(2)}>{String.Services.BPO}</AccordionHeader>
-            <AccordionBody>
+            <AccordionHeader onClick={() => handleOpenNested(2)}> <BiHeadphone  /> {String.Services.BPO}</AccordionHeader>
+            <AccordionBody className="flex flex-col gap-2 p-0">
               <Link href="" className="text-base"> {String.Services.BPOUl.b1}</Link>
               <Link href="" className="text-base"> {String.Services.BPOUl.b2}</Link>
               <Link href="" className="text-base"> {String.Services.BPOUl.b3}</Link>
@@ -560,8 +560,8 @@ const AccordionCustomIcon = () => {
             </AccordionBody>
           </Accordion>
           <Accordion className="w-[83%] ml-4" open={openNested === 3} icon={<Icon id={3} open={openNested} />}>
-            <AccordionHeader onClick={() => handleOpenNested(3)}>{String.Services.Cons}</AccordionHeader>
-            <AccordionBody>
+            <AccordionHeader onClick={() => handleOpenNested(3)}><BiBulb />{String.Services.Cons}</AccordionHeader>
+            <AccordionBody className="flex flex-col gap-2 p-0">
               <Link href="" className="text-base"> {String.Services.ConsUl.c1}</Link>
               <Link href="" className="text-base"> {String.Services.ConsUl.c2}</Link>
               <Link href="" className="text-base"> {String.Services.ConsUl.c3}</Link>

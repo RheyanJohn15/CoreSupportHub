@@ -7,6 +7,9 @@ class Background extends Component {
     return (
       <>
         <ParticlesBg color="#ff6b3d" type="cobweb" bg={true} />
+        <ParticlesBg color="#ff6b3d" type="cobweb" bg={true} />
+        <ParticlesBg color="#ff6b3d" type="cobweb" bg={true} />
+        <ParticlesBg color="#ff6b3d" type="cobweb" bg={true} />
       </>
     );
   }
