@@ -28,7 +28,8 @@ const HorizontalScrollCarousel = () => {
   });
 
   // Determine screen size to conditionally set x value
-  const isSmallScreen = window.innerWidth < 768; // Adjust as per your design breakpoints
+const isSmallScreen = typeof window !== 'undefined' && window.innerWidth < 768;
+
 
   // Adjust x value based on screen size and scrollYProgress
   const x = useTransform(
