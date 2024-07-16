@@ -1,5 +1,5 @@
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   Card,
   CardBody,
@@ -7,24 +7,16 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import Image from "next/image";
-import Img from '../../public/techIcon.png';
-import { GrTechnology } from "react-icons/gr";
-import { useState } from 'react';
+import React from 'react';
+import { FaMicrochip,FaHeadset, FaRegLightbulb   } from "react-icons/fa6";
 
 const Example = () => {
   return (
     <div className="bg-neutral-800">
       <div className="flex h-1 items-center justify-center">
-        {/* <span className="font-semibold uppercase text-neutral-500">
-          Scroll down
-        </span> */}
       </div>
       <HorizontalScrollCarousel />
       <div className="flex h-1 items-center justify-center">
-        {/* <span className="font-semibold uppercase text-neutral-500">
-          Scroll up
-        </span> */}
       </div>
     </div>
   );
@@ -66,19 +58,19 @@ const Cardss = ({ card }) => {
   };
 
   return (
-    <Card
+       <Card
       key={card.id}
-      className={`h-auto w-96 rounded shadow-xl bg-gradient-to-br p-7 from-yellow to-darkOrange transition duration-100 hover:shadow-main hover:from-main hover:to-yellow hover:text-white`}
+      className={`h-auto w-64 md:w-96 rounded shadow-xl bg-gradient-to-br p-7 from-yellow to-darkOrange transition duration-100 hover:shadow-main hover:from-main hover:to-yellow hover:text-white`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <CardBody>
         <div className="mb-4">
-          {/* Conditional icon color based on hover state */}
-          <GrTechnology
-            size={35}
-            className={`${isHovered ? 'text-yellow' : 'black'} cursor-pointer`}
-          />
+          {/* Render dynamic icon with hover effect */}
+          {React.cloneElement(card.icon, {
+            size: 35,
+            className: `${isHovered ? 'text-yellow' : 'text-black'} cursor-pointer`,
+          })}
         </div>
         <div>
           <div className="flex items-center mb-4">
@@ -100,6 +92,7 @@ const Cardss = ({ card }) => {
         </Button>
       </CardFooter>
     </Card>
+
   );
 };
 
@@ -107,27 +100,21 @@ export default Example;
 
 const cards = [
   {
-    url: Img,
+    icon: <FaMicrochip />,
     title: "Title 1",
     id: 1,
     body: 'This is some text within a card body. It provides brief information about the content of the card.',
   },
   {
-    url: Img,
+    icon: <FaHeadset  />,
     title: "Title 2",
     id: 2,
     body: 'This is some text within a card body. It provides brief information about the content of the card.',
   },
   {
-    url: Img,
+    icon: <FaRegLightbulb />,
     title: "Title 3",
     id: 3,
-    body: 'This is some text within a card body. It provides brief information about the content of the card.',
-  },
-  {
-    url: Img,
-    title: "Title 4",
-    id: 4,
     body: 'This is some text within a card body. It provides brief information about the content of the card.',
   },
 ];
