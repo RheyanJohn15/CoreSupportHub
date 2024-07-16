@@ -103,18 +103,18 @@ const cards = [
     icon: <FaMicrochip />,
     title: "IT Manage Services",
     id: 1,
-    body: 'This is some text within a card body. It provides brief information about the content of the card.',
+    body: "Core Support Hub offers managed IT services including remote desktop support, system administration, and network monitoring to optimize your connectivity.",
   },
   {
     icon: <FaHeadset  />,
     title: "Bpo",
     id: 2,
-    body: 'This is some text within a card body. It provides brief information about the content of the card.',
+    body: 'We design, build, and customize software and applications to enhance performance across operations, finance, HR, inventory, and business websites.',
   },
   {
     icon: <FaRegLightbulb />,
     title: "Consulting",
     id: 3,
-    body: 'This is some text within a card body. It provides brief information about the content of the card.',
+    body: 'Core Support Hub extends your business by understanding operations and delivering authentic brand ambassador services to your customers.',
   },
 ];
