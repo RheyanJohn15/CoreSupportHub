@@ -60,7 +60,7 @@ const Cardss = ({ card }) => {
   return (
        <Card
       key={card.id}
-      className={`h-auto w-72 md:w-96 rounded shadow-xl bg-gradient-to-br p-7 from-yellow to-darkOrange transition duration-100 hover:shadow-main hover:from-main hover:to-yellow hover:text-white`}
+      className={`h-auto w-80 md:w-96 rounded shadow-xl bg-gradient-to-br p-7 from-yellow to-darkOrange transition duration-100 hover:shadow-main hover:from-main hover:to-yellow hover:text-white`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
