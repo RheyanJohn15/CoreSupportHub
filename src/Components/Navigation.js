@@ -190,8 +190,8 @@ const Services = () => {
   return (
     <div>
       <Link href={'/'} className="text-main text-xl mb-4 flex items-center gap-1 hover:underline"><span>Our Services</span> <FiArrowRight /></Link>
-      <div className="grid grid-cols-3 gap-4 divide-x ">
-        <div className="flex-col"> 
+      <div className="grid grid-cols-3 gap-4 divide-x">
+        <div className="flex-col pl-4"> 
           <h3 className="mb-2 text-2xl font-medium">{String.Services.Tech}</h3>
           <Link href="#" className="mb-1 flex gap-2 text-base text-white hover:text-main">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">

@@ -18,6 +18,8 @@ const Main = {
   Img:{
     Logo: 'Logo Image',
   },
+  Tools: 'Core Support Hub Tools',
+  SubTools: 'Tools our team work with',
   Services: {
     Tech: "Technology",
     BPO: "Business Process Outsourcing",

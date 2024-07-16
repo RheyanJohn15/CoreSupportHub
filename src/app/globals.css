@@ -14,7 +14,23 @@ body::before {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(to left top, #111111, #271e2b, #48273e, #6e2d46, #933643, #933643, #933643, #933643, #6e2d46, #48273e, #271e2b, #111111);
+  background-image: linear-gradient(
+    180deg,
+    hsl(0deg 0% 7%) 1%,
+    hsl(15deg 34% 15%) 38%,
+    hsl(15deg 45% 23%) 46%,
+    hsl(15deg 51% 31%) 50%,
+    hsl(15deg 55% 39%) 51%,
+    hsl(14deg 58% 48%) 51%,
+    hsl(14deg 81% 57%) 50%,
+    hsl(14deg 81% 57%) 50%,
+    hsl(14deg 58% 48%) 49%,
+    hsl(15deg 55% 39%) 49%,
+    hsl(15deg 51% 31%) 50%,
+    hsl(15deg 45% 23%) 54%,
+    hsl(15deg 34% 15%) 62%,
+    hsl(0deg 0% 7%) 99%
+  );
   z-index: -1; /* Ensure it stays behind the content */
   pointer-events: none; /* Ensure it doesn't interfere with any interactions */
 }
