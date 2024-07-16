@@ -14,7 +14,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(to bottom, #111111, #302336, #5e3051, #95395e, #ca455a, #ca455a, #ca455a, #ca455a, #95395e, #5e3051, #302336, #111111);
+  background-image: linear-gradient(to left top, #111111, #271e2b, #48273e, #6e2d46, #933643, #933643, #933643, #933643, #6e2d46, #48273e, #271e2b, #111111);
   z-index: -1; /* Ensure it stays behind the content */
   pointer-events: none; /* Ensure it doesn't interfere with any interactions */
 }
