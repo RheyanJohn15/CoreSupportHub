@@ -21,7 +21,7 @@ const Example = () => {
   );
 };
 
-const HorizontalScrollCarousel = () => {x
+const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
