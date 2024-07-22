@@ -39,9 +39,9 @@ const isSmallScreen = typeof window !== 'undefined' && window.innerWidth < 768;
   );
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
+    <section ref={targetRef} className="relative h-[150vh] bg-neutral-900">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <h1 className="pl-5 text-4xl text-quicksand text-main md:text-5xl lg:text-6xl whitespace-nowrap">
+        <h1 className="pl-6 subpixel-antialiased font-black text-4xl text-quicksand text-main md:text-5xl lg:text-6xl whitespace-nowrap">
           Our Services
         </h1>
         <motion.div style={{ x }} className="flex gap-20">
@@ -68,7 +68,7 @@ const CardComponent = ({ card }) => {
   return (
     <Card
       key={card.id}
-      className={`h-auto w-80 md:w-96 rounded shadow-xl bg-gradient-to-br p-7 from-yellow to-darkOrange transition duration-100 hover:shadow-main hover:from-main hover:to-yellow hover:text-white`}
+      className={`h-auto w-80 md:w-96 rounded shadow-lg bg-gradient-to-br p-7 from-yellow to-darkOrange transition duration-100 hover:shadow-main hover:from-main hover:to-yellow hover:text-white`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
