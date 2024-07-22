@@ -39,7 +39,7 @@ const Navigation = () => {
 
   return (
     <>
-      <div className={`hidden md:flex fixed top-0 left-0 right-0 transition-all duration-200 ease-in-out w-screen justify-between px-20 text-white z-20 ${scrollBg ? 'bg-main/20 backdrop-blur-lg' : ''}`}>
+      <div className={`hidden md:flex fixed top-0 left-0 right-0 transition-all duration-200 ease-in-out w-screen justify-between px-20 text-white z-20 ${scrollBg ? 'bg-dark/20 backdrop-blur-lg' : ''}`}>
         <Link href="/" className="p-4">
           <Image src={Logo} alt={String.Img.Logo} height={60} />
         </Link>

@@ -18,8 +18,21 @@ const Main = {
   Img:{
     Logo: 'Logo Image',
   },
-  Tools: 'Core Support Hub Tools',
-  SubTools: 'Tools our team work with',
+  Tools: 'Our Technology Toolkit',
+  SubTools: 'At Core Support Hub, we leverage a robust suite of cutting-edge programming tools and technologies to deliver exceptional solutions.',
+  ListTools:{
+    Framework:{
+      Title: 'Web Application Frameworks',
+      wb1: 'Laravel - PHP',
+      wb2: 'ASP.Net MVC - C#',
+      wb3: 'Django - Python',
+      wb4: 'NextJs - Javascript'
+    },
+    FronteEnd: {
+      Title: 'Frontend Frameworks',
+      fe1: 'React',
+    }
+  },
   Services: {
     Tech: "Technology",
     BPO: "Business Process Outsourcing",

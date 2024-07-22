@@ -8,13 +8,19 @@ const Tools = () => {
   return (
     <section className="w-full mt-24 px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-20 max-w-6xl mx-auto">
       <div>
-        <h3 className="text-6xl  font-semibold">
+        <h3 className="text-3xl text-white font-semibold">
           {String.Tools}
         </h3>
-        <p className="text-4xl my-4 md:my-6">
+        <p className="text-base text-white my-4 md:my-6">
          {String.SubTools}
         </p>
-    
+        <p className="text-white font-semibold ml-4">{String.ListTools.Framework.Title}</p>
+        <ul class="list-disc text-white ml-8">
+         <li>{String.ListTools.wb1}</li>
+         <li>{String.ListTools.wb2}</li>
+         <li>{String.ListTools.wb3}</li>
+         <li>{String.ListTools.wb4}</li>
+        </ul>
       </div>
       <ShuffleGrid />
     </section>
@@ -117,9 +123,9 @@ const generateSquares = () => {
         backgroundSize: "contain",
         backgroundPosition:"center",
         backgroundRepeat: "no-repeat",
-        backgroundColor: 'rgba(15,15,15, 0.7)',
-        borderRadius: '20px',
-        backdropFilter: 'blur(40px)'
+        // backgroundColor: 'rgba(220,220,220, 0.3)',
+        // borderRadius: '20px',
+        // backdropFilter: 'blur(40px)'
       }}
     ></motion.div>
   ));
